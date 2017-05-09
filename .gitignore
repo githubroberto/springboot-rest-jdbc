@@ -1,0 +1,9 @@
+### Maven template
+target/
+
+### Intellij template
+*.iml
+.idea/
+*.ipr
+*.iws
+.DS_Store
