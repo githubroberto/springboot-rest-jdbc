@@ -1,11 +1,7 @@
 package hemma.springboot.stock.repository;
 
 import hemma.springboot.stock.model.Stock;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.Collection;
-
-public interface StockRepository {
-    Collection<Stock> stocks();
-
-    Stock stock(Long stockId);
+public interface StockRepository extends CrudRepository<Stock, Long>{
 }

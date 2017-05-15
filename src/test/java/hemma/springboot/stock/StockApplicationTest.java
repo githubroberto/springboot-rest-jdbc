@@ -1,6 +1,6 @@
 package hemma.springboot.stock;
 
-import hemma.springboot.stock.config.JdbcConfiguration;
+import hemma.springboot.stock.config.JpaConfiguration;
 import hemma.springboot.stock.controller.StockController;
 import hemma.springboot.stock.response.ResponseMessage;
 import org.junit.Before;
@@ -22,7 +22,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {JdbcConfiguration.class})
+@ContextConfiguration(classes = {JpaConfiguration.class})
 public class StockApplicationTest {
 
     @Autowired

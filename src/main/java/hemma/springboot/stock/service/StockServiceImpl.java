@@ -1,5 +1,6 @@
 package hemma.springboot.stock.service;
 
+import com.google.common.collect.ImmutableList;
 import hemma.springboot.stock.model.Stock;
 import hemma.springboot.stock.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,19 +11,14 @@ import java.util.Collection;
 @Service
 public class StockServiceImpl implements StockService {
 
-    private StockRepository stockRepository;
-
     @Autowired
-    public StockServiceImpl(StockRepository stockRepository) {
-        this.stockRepository = stockRepository;
-    }
+    public StockRepository stockRepository;
 
     public Collection<Stock> stocks() {
-        return stockRepository.stocks();
+        return ImmutableList.copyOf(stockRepository.findAll());
     }
 
-
     public Stock stock(Long stockId) {
-        return stockRepository.stock(stockId);
+        return stockRepository.findOne(stockId);
     }
 }

@@ -1,12 +1,23 @@
 package hemma.springboot.stock.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
+import static javax.persistence.GenerationType.AUTO;
+
+@Entity
 public class Stock {
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private Long id;
+
     private String companyName;
     private String symbol;
     private BigDecimal price;
+
+    public Stock() {}
 
     public Stock(Long id, String companyName, String symbol, BigDecimal price) {
         this.id = id;
